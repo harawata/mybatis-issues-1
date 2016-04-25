@@ -21,7 +21,6 @@
 <mapper namespace="issue.RoleDao">
 	
 	<resultMap id="RoleResult" type="issue.Role">
-		<result column="ROLE" typeHandler="RoleTypeHandler"/>
 	</resultMap>
 
 </mapper>
