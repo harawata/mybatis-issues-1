@@ -15,5 +15,3 @@
 --
 
 INSERT INTO USER_ROLE values (1, 'TEST');
-INSERT INTO USER_ROLE values (2, 'TEST');
-INSERT INTO USER_ROLE values (3, 'TEST');

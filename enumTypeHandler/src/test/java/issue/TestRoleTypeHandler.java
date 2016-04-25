@@ -1,6 +1,6 @@
 package issue;
 
-import java.util.Arrays;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,25 +16,19 @@ public class TestRoleTypeHandler {
 	RoleDao dao;
 
 	@Test
-	public void getUserRolesWithResultAnnotation() {
-		try {
-			Role[] roles = dao.getUserRolesWithResultAnnotation("TEST");
-			assert (roles.length == 3);
-			System.out.println("Roles found with ResultMapAnnotation: " + Arrays.toString(roles));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public void getUserRolesWithResultAnnotation() throws Exception
+	{
+		Role[] roles = dao.getUserRolesWithResultAnnotation("TEST");
+		assertEquals(1, roles.length);
+		assertEquals(Role.USER, roles[0]);
 	}
 
 	@Test
-	public void getUserRolesWithResultMapAnnotation() {
-		try {
-			Role[] roles = dao.getUserRolesWithResultMapAnnotationAndXml("TEST");
-			assert (roles.length == 3);
-			System.out.println("Roles found with ResultAnnotation: " + Arrays.toString(roles));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public void getUserRolesWithResultMapAnnotation() throws Exception
+	{
+		Role[] roles = dao.getUserRolesWithResultMapAnnotationAndXml("TEST");
+		assertEquals(1, roles.length);
+		assertEquals(Role.USER, roles[0]);
 	}
 
 }
